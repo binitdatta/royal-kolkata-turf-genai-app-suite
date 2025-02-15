@@ -1,0 +1,18 @@
+<h2>Membership By Type </h2>
+
+<div class="panel-body">
+    <table class="table table-hover table-sm" datatable>
+        <thead class="thead-light">
+            <tr>
+                <th>Membership Type</th>
+                <th>Total Members</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let member of membersByType ">
+                <td>{{member.membershipType}}</td>
+                <td>{{member.totalMembers}}</td>
+            </tr>
+        </tbody><br>
+    </table>
+</div>

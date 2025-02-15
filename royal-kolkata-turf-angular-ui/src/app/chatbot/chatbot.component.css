@@ -1,0 +1,146 @@
+.chatbot-popup {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 400px;
+    height: 600px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.chatbot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.chatbot-body {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.user-message {
+    text-align: right;
+    margin: 5px 0;
+    color: #000;
+    background-color: #d9fdd3;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.bot-message {
+    text-align: left;
+    margin: 5px 0;
+    color: #fff;
+    background-color: #007bff;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* .chatbot-footer {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+} */
+
+.chatbot-footer {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    align-items: flex-start;
+    /* Ensures proper alignment with textarea */
+}
+
+.chatbot-footer .chatbot-textarea {
+    flex: 1;
+    margin-right: 10px;
+    resize: vertical;
+    /* Allow resizing vertically if needed */
+    min-height: 40px;
+    /* Minimum height for usability */
+    max-height: 120px;
+    /* Prevent it from growing too tall */
+}
+
+.chatbot-footer button {
+    height: 100%;
+    /* Ensures the button matches the height of the textarea */
+    align-self: center;
+    /* Aligns the button properly when textarea height changes */
+}
+
+.chatbot-footer input {
+    flex: 1;
+    margin-right: 10px;
+}
+
+/* Styles for Predefined Questions Section */
+.predefined-questions-container {
+    background: #f8f9fa;
+    /* Light gray background */
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Align buttons properly and add spacing */
+.predefined-questions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    /* Space between buttons */
+    justify-content: center;
+}
+
+/* Style the buttons */
+.predefined-questions button {
+    flex-grow: 1;
+    min-width: 220px;
+    /* Set a min width for consistency */
+}
+
+/* Custom color override for Bootstrap outline buttons */
+.btn-outline-primary {
+    color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-outline-success {
+    color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-outline-danger {
+    color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-outline-warning {
+    color: #ffc107;
+    border-color: #ffc107;
+}
+
+.btn-outline-info {
+    color: #17a2b8;
+    border-color: #17a2b8;
+}
+
+.btn-outline-dark {
+    color: #343a40;
+    border-color: #343a40;
+}
+
+.btn-outline-secondary {
+    color: #6c757d;
+    border-color: #6c757d;
+}

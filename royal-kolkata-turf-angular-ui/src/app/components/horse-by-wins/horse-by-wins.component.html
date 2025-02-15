@@ -1,0 +1,18 @@
+<h2>Horses By Wins </h2>
+
+<div class="panel-body">
+    <table class="table table-hover table-sm" datatable>
+        <thead class="thead-light">
+            <tr>
+                <th>Horsename</th>
+                <th>Total Wins</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let horse of horsesByWins ">
+                <td>{{horse.horseName}}</td>
+                <td>{{horse.wins}}</td>
+            </tr>
+        </tbody><br>
+    </table>
+</div>

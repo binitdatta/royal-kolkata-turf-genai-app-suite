@@ -1,0 +1,67 @@
+<div class="container">
+    <h2>Add New Horse</h2>
+
+    <!-- ✅ Success Message -->
+    <div *ngIf="successMessage" class="alert alert-success">
+        {{ successMessage }}
+    </div>
+
+    <!-- ❌ Error Message -->
+    <div *ngIf="errorMessage" class="alert alert-danger">
+        {{ errorMessage }}
+    </div>
+
+    <form (ngSubmit)="addHorse()">
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" [(ngModel)]="horse.name" name="name" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Birth Date</label>
+            <input type="date" class="form-control" [(ngModel)]="horse.birthDate" name="birthDate" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Gender</label>
+            <select class="form-control" [(ngModel)]="horse.gender" name="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Color</label>
+            <input type="text" class="form-control" [(ngModel)]="horse.color" name="color" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Height (cm)</label>
+            <input type="number" class="form-control" [(ngModel)]="horse.height" name="height" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Weight (kg)</label>
+            <input type="number" class="form-control" [(ngModel)]="horse.weight" name="weight" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Birthmarks</label>
+            <input type="text" class="form-control" [(ngModel)]="horse.birthmarks" name="birthmarks">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Category</label>
+            <select class="form-control" [(ngModel)]="horse.category.categoryId" name="categoryId">
+                <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Handicap Rating</label>
+            <input type="number" class="form-control" [(ngModel)]="horse.handicapRating" name="handicapRating">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add Horse</button>
+    </form>
+</div>

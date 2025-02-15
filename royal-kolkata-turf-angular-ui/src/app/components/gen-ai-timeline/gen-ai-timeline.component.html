@@ -1,0 +1,64 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4">🚀 Evolution of Generative AI</h2>
+
+    <!-- Row for Image + Top Two Cards -->
+    <div class="row d-flex align-items-start">
+
+        <!-- Iceberg Image (Left) -->
+        <div class="col-md-4 iceberg-container">
+            <img src="assets/img/genai-iceberg-phases.png" class="img-fluid iceberg-image"
+                alt="Generative AI Evolution Iceberg" data-bs-toggle="modal" data-bs-target="#imageModal">
+        </div>
+
+        <!-- Top Two Cards (Right) -->
+        <div class="col-md-8">
+            <div class="row">
+                <div *ngFor="let phase of timeline.slice(0,2)" class="col-md-6 mb-4">
+                    <div class="card shadow-lg">
+                        <div class="card-header bg-dark text-white">
+                            <h5 class="mb-0">{{ phase.year }}</h5>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">{{ phase.title }}</h5>
+                            <p class="card-text">{{ phase.description }}</p>
+                            <ul class="list-group list-group-flush">
+                                <li *ngFor="let detail of phase.details" class="list-group-item">{{ detail }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Row for Remaining Cards -->
+    <div class="row mt-4">
+        <div *ngFor="let phase of timeline.slice(2)" class="col-md-6 mb-4">
+            <div class="card shadow-lg">
+                <div class="card-header bg-dark text-white">
+                    <h5 class="mb-0">{{ phase.year }}</h5>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-primary">{{ phase.title }}</h5>
+                    <p class="card-text">{{ phase.description }}</p>
+                    <ul class="list-group list-group-flush">
+                        <li *ngFor="let detail of phase.details" class="list-group-item">{{ detail }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 Modal for Image Zoom (Now Bigger) -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered"> <!-- Enlarged modal -->
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <img src="assets/img/genai-iceberg-phases.png" class="img-fluid zoomed-image" alt="Zoomed Iceberg">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

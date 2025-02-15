@@ -1,0 +1,27 @@
+<div class="container mt-4">
+    <h2 class="text-center mb-4">How Mathematics, Statistics & Other Fields Power NLP & Generative AI</h2>
+
+    <!-- Pie Chart Image Section -->
+    <div class="text-center">
+        <img src="assets/img/nlp_contributions_pie_chart.png" alt="NLP Contributions Pie Chart"
+            class="img-fluid pie-chart">
+    </div>
+
+    <!-- NLP Contributions Using Bootstrap Cards -->
+    <div class="row mt-4">
+        <div class="col-md-6 mb-4" *ngFor="let section of sections">
+            <div class="card border-{{ section.bgColor }}">
+                <div class="card-header bg-{{ section.bgColor }} text-white">
+                    <h5 class="mb-0">{{ section.title }}</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" *ngFor="let topic of section.topics">
+                            <strong>{{ topic.subTitle }}:</strong> {{ topic.description }}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

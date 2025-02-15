@@ -1,0 +1,71 @@
+<div class="panel-body">
+    <div class="chatbot-header">
+        <h5>Royal Kolkata Racing ChatBot</h5>
+        <button type="button" class="btn-close" aria-label="Close" (click)="closeChatbot()"></button>
+        <button type="button" class="btn btn-secondary refresh-button" (click)="refreshChatbot()">Refresh</button>
+    </div>
+    <hr/>
+
+    <hr /> <!-- Divider for UI clarity -->
+    
+    <!-- Predefined Questions Section -->
+    <div class="predefined-questions-container">
+        <h6>Predefined Questions You Can Ask</h6>
+        <div class="predefined-questions">
+            <button class="btn btn-outline-success"
+                (click)="setPredefinedMessage('Please fetch Horses By Category in Plain Text')">
+                Horses By Category (Text)
+            </button>
+            <button class="btn btn-outline-danger"
+                (click)="setPredefinedMessage('Please provide horses By Category Bar Chart')">
+                Horses By Category (Bar Chart)
+            </button>
+            <button class="btn btn-outline-warning"
+                (click)="setPredefinedMessage('Please provide Category Wise Average Handicap')">
+                Avg Handicap By Category
+            </button>
+            <button class="btn btn-outline-info"
+                (click)="setPredefinedMessage('Please provide Race Wise Jockey Participation')">
+                Jockey Race Participation
+            </button>
+            <button class="btn btn-outline-dark" (click)="setPredefinedMessage('Please provide Horse By Wins Bar Chart')">
+                Horse Wins (Bar Chart)
+            </button>
+            <button class="btn btn-outline-secondary"
+                (click)="setPredefinedMessage('Please provide a Pie Chart for Membership By TotalMembers')">
+                Membership Pie Chart
+            </button>
+            <button class="btn btn-outline-primary"
+                (click)="setPredefinedMessage('Please provide a Line Chart for Monthly Revenue By Party Bookings')">
+                Monthly Revenue (Line Chart)
+            </button>
+        </div>
+    </div>
+
+    <div class="chatbot-body">
+        <!-- Check if the message is a histogram -->
+        <div *ngIf="chartOptions && chartOptions.series && chartOptions.series.length">
+            <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"
+                style="width: 100%; height: 400px; display: block;">
+            </highcharts-chart>
+        </div>
+        <div *ngFor="let message of messages" [class]="message.isUser ? 'user-message' : 'bot-message'">
+            {{ message.text }}
+        </div>
+    </div>
+    <!-- <div class="chatbot-footer">
+        <input type="text" [(ngModel)]="userInput" class="form-control" placeholder="Ask a question..."
+            [disabled]="isWaitingForResponse" />
+        <button class="btn btn-primary" (click)="sendMessage()" [disabled]="isWaitingForResponse || !userInput.trim()">
+            Send
+        </button>
+    </div> -->
+    <div id="dynamicTableContainer"></div>
+    <div class="chatbot-footer">
+        <textarea [(ngModel)]="userInput" class="form-control chatbot-textarea" placeholder="Ask a question..." rows="2"
+            [disabled]="isWaitingForResponse"></textarea>
+        <button class="btn btn-primary" (click)="sendMessage()" [disabled]="isWaitingForResponse || !userInput.trim()">
+            Send
+        </button>
+    </div>
+</div>

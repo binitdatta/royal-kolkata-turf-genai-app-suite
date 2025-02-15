@@ -1,0 +1,47 @@
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Neural Networks vs. Human Brain</h2>
+
+    <!-- Images Section -->
+    <div class="image-container">
+        <div class="image-box">
+            <h4 class="text-center">Biological Neuron</h4>
+            <img src="assets/img/neural_network_1.png" alt="Biological Neuron" class="img-fluid">
+        </div>
+        <div class="image-box">
+            <h4 class="text-center">Artificial Neural Network</h4>
+            <img src="assets/img/neural_network_2.png" alt="Artificial Neural Network" class="img-fluid">
+        </div>
+    </div>
+
+    <!-- Similarities Section -->
+    <div class="row">
+        <div class="col-12">
+            <h4 class="text-success">Similarities</h4>
+        </div>
+
+        <div class="col-md-6" *ngFor="let similarity of similarities">
+            <div class="card border-success mb-3">
+                <div class="card-header bg-success text-white">{{ similarity.title }}</div>
+                <div class="card-body">
+                    <p class="card-text">{{ similarity.description }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Differences Section -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <h4 class="text-primary">Differences</h4>
+        </div>
+
+        <div class="col-md-6" *ngFor="let difference of differences">
+            <div class="card border-primary mb-3">
+                <div class="card-header bg-primary text-white">{{ difference.title }}</div>
+                <div class="card-body">
+                    <p class="card-text">{{ difference.description }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

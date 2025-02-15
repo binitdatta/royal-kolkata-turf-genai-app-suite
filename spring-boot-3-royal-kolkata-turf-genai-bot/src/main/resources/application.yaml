@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: spring-boot-3-royal-kolkata-turf-genai-bot
+#Pass API key as environment variable, e.g. -DOPENAI_API_KEY=your-api-key
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+      chat:
+        options:
+          model: gpt-4
+
+server:
+  port: 8993

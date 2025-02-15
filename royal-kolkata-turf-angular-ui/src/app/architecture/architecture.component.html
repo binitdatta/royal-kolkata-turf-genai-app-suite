@@ -1,0 +1,58 @@
+<section layout:fragment="page-layout-content" id="cta" class="cta">
+  <div class="container">
+    <div class="col-lg-12 text-center text-lg-left">
+      <h3>Spring Boot Spring AI <span>Application Architecture</span></h3>
+      <div class="row">
+        <img src="assets/img/customer_arch_cbot.png" class="img-fluid" width="300" height="300"
+          alt="PubSub Architecture">
+      </div>
+      <hr>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 text-center text-lg-left">
+        <h3>Spring AI <span>Gen AI Driven Architecture - Operational Use Case</span></h3>
+        <ul align="left">
+          <li><strong>1. There are two main types of users:</strong></li>
+          <li><strong>- Operational Users: Manage daily business tasks by creating and viewing data.</strong></li>
+          <li><strong>- Bot user types can use the same UI based on role-based access.</strong></li>
+          <li><strong>Operational User Flow:</strong></li>
+          <li><strong>1. Operational User logs in and navigates to the Angular UI.</strong></li>
+          <li><strong>2. Angular UI invokes backend REST API endpoints based on user actions.</strong></li>
+          <li><strong>3. Backend REST APIs perform DML operations on the database.</strong></li>
+          <li><strong>4. The backend REST API returns responses to the Angular UI.</strong></li>
+          <li><strong>5. Angular UI renders the data, confirms success, or warns about failures.</strong></li>
+          <li><strong>6. PubSub copies messages published to a Topic to all Subscriptions.</strong></li>
+          <li><strong>7. Consumers pull messages from Subscriptions independently.</strong></li>
+          <li><strong>8. If a message is acknowledged by one consumer, it is deleted from that Subscription but remains
+              in others until consumed.</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 text-center text-lg-left">
+        <h3>Spring AI <span>Gen AI Driven Architecture - Bot Use Case</span></h3>
+        <ul align="left">
+          <li><strong>1. Now, consider the analytics/managerial user interacting with the bot.</strong></li>
+          <li><strong>2. The user navigates to the ChatBot, enters a question, and presses the Send button.</strong>
+          </li>
+          <li><strong>3. The Angular ChatBot invokes the backend Gen AI custom REST API (not OpenAI API).</strong></li>
+          <li><strong>4. The OpenAI custom service sends an initial prompt to invoke specific functions using JSON
+              Schema with Spring AI.</strong></li>
+          <li><strong>5. The OpenAI LLM API determines which Spring AI function to call based on JSON Schema.</strong>
+          </li>
+          <li><strong>6. A specific Spring AI function invokes a REST API.</strong></li>
+          <li><strong>7. The REST API retrieves data from the backend SQL database.</strong></li>
+          <li><strong>8. The backend REST API returns data to the Spring AI function.</strong></li>
+          <li><strong>9. Angular UI renders the data, confirms success, or warns about failures.</strong></li>
+          <li><strong>10. The Spring AI function embeds the response and sends it back to OpenAI LLM API.</strong></li>
+          <li><strong>11. The OpenAI API returns the final response.</strong></li>
+          <li><strong>12. The Bot REST API sends the final response to the Angular ChatBot.</strong></li>
+          <li><strong>13. The Angular UI inspects the response and dynamically renders text, tables, or charts.</strong>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section><!-- End Cta Section -->

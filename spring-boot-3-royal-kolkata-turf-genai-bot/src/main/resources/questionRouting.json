@@ -1,0 +1,11 @@
+{
+  "horses By Category Bar Chart": "horsesByCategoryBarChartQuestion",
+  "Horses By Category": "horsesByCategoryTextQuestion",
+  "Category Wise Average Handicap": "categoryWiseHandicapBarChartQuestion",
+  "Race Wise Jockey Participation": "raceWiseJockeyParticipationBarChartQuestion",
+  "Bets By Race Bar Chart": "totalBetsByRaceBarChartQuestion",
+  "Horse By Wins Bar Chart": "horsesByWinsBarChartQuestion",
+  "Membership By TotalMembers": "membershipByTotalMembersPieChartQuestion",
+  "Monthly Revenue By Party Bookings": "monthlyRevenueByPartyBookingsChartQuestion",
+  "Fetch a Tabular Grid of Horses": "horseSearchTabularGridQuestion"
+}

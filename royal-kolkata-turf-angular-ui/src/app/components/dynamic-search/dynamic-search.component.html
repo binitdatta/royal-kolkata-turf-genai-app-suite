@@ -1,0 +1,89 @@
+<div class="search-container">
+    <h3>Horse Race Search</h3>
+
+    <!-- Search Form -->
+    <div class="search-form">
+        <div class="row">
+            <div class="col-md-3">
+                <label>Horse Name</label>
+                <input type="text" class="form-control" [(ngModel)]="searchCriteria.horseName">
+            </div>
+            <div class="col-md-3">
+                <label>Color</label>
+                <input type="text" class="form-control" [(ngModel)]="searchCriteria.color">
+            </div>
+            <div class="col-md-3">
+                <label>Birthday</label>
+                <input type="date" class="form-control" [(ngModel)]="searchCriteria.birthDate" (change)="validateDate()"
+                    (input)="validateDate()">
+            </div>
+            <div class="col-md-3">
+                <label>Category</label>
+                <select class="form-control" [(ngModel)]="searchCriteria.category">
+                    <option value="" disabled selected>Select Category</option>
+                    <option *ngFor="let category of horseCategories" [value]="category.id">
+                        {{ category.name }}
+                    </option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label>Gender</label>
+                <input type="text" class="form-control" [(ngModel)]="searchCriteria.gender">
+            </div>
+        </div>
+        <br>
+        <button class="btn btn-primary" (click)="searchHorses()">Search</button>
+        <button class="btn btn-primary button-spacing" (click)="resetSearchPage()">Refresh</button>
+    </div>
+
+    <hr />
+
+    <!-- Loading Indicator -->
+    <div *ngIf="isLoading" class="alert alert-info">
+        Loading results...
+    </div>
+
+    <!-- Error Message -->
+    <div *ngIf="isError" class="alert alert-danger">
+        Error fetching search results. Please try again.
+    </div>
+
+<!-- Results Grid -->
+<div *ngIf="results && results.length > 0">
+    <h4>Search Results</h4>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Horse Name</th>
+                    <th>Birthday</th>
+                    <th>Gender</th>
+                    <th>Color</th>
+                    <th>Height</th>
+                    <th>Weight</th>
+                    <th>Category</th>
+                    <th>Handicap</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let horse of results">
+                    <td>{{ horse.horseId }}</td>
+                    <td>{{ horse.name }}</td>
+                    <td>{{ horse.birthDate | date:'MM-dd-yyyy' }}</td>
+                    <td>{{ horse.gender }}</td>
+                    <td>{{ horse.color }}</td>
+                    <td>{{ horse.height }}</td>
+                    <td>{{ horse.weight }}</td>
+                    <td>{{ horse.category?.categoryName }}</td> <!-- Fix for object issue -->
+                    <td>{{ horse.handicapRating }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- No Results Message -->
+<div *ngIf="!isLoading && results && results.length === 0" class="alert alert-warning">
+    No results found.
+</div>

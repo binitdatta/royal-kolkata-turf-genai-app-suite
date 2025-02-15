@@ -1,0 +1,76 @@
+.iceberg-container {
+    display: flex;
+    justify-content: center;
+    /* Center the image */
+    align-items: center;
+    /* Align with the cards */
+    padding: 10px;
+}
+
+.iceberg-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    /* Indicate clickability */
+    transition: transform 0.2s ease-in-out;
+}
+
+.iceberg-image:hover {
+    transform: scale(1.05);
+}
+
+/* Make the zoomed image bigger in the modal */
+.zoomed-image {
+    width: 100%;
+    max-width: 1200px;
+    /* Ensure it looks larger */
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        /* Stack on mobile */
+    }
+
+    .iceberg-container {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .iceberg-image {
+        max-width: 60%;
+        margin: 0 auto;
+    }
+
+    .zoomed-image {
+        max-width: 95%;
+        /* Keep it large but responsive */
+    }
+}
+
+.card {
+    transition: transform 0.2s ease-in-out;
+    border-radius: 10px;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.card-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.1rem;
+}
+
+.list-group-item {
+    border: none;
+    padding: 5px 10px;
+}
